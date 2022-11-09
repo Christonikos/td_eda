@@ -14,8 +14,8 @@ import pandas_profiling
 import pandas as pd
 
 
-st.set_page_config(page_title='TD-EDA Report',
-                   page_icon=":brain:", layout='wide')
+# st.set_page_config(page_title='TD-EDA Report',
+#                    page_icon=":brain:", layout='wide')
 # # =============================================================================
 # # LOCAL CSS
 # # =============================================================================
