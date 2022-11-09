@@ -46,5 +46,5 @@ profile = pandas_profiling.ProfileReport(
     model_dev_subject_id, title='TD-Brain EDA')
 st.title("TD-Brain EDA")
 
-st.write(tsv_file)
+st.write(model_dev_subject_id)
 st_profile_report(profile)
