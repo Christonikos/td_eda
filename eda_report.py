@@ -10,13 +10,12 @@ Generate TD-Brain Dataset report and deploy it via Streamlit
 # =============================================================================
 import streamlit as st
 from streamlit_pandas_profiling import st_profile_report
-import os
 import pandas_profiling
 import pandas as pd
 
 # define the root path where the raw data are stored
-root_path = '/Volumes/storage/TD-BRAIN-DATASET/'
-tsv_fname = os.path.join(root_path, 'participants.tsv')
+
+tsv_fname = 'participants.tsv'
 tsv_file = pd.read_csv(tsv_fname,
                        sep='\t',
                        index_col=False,
