@@ -40,11 +40,13 @@ tsv_file = pd.read_csv(tsv_fname,
                        index_col=False,
                        low_memory=False)
 
-model_dev_subject_id = tsv_file.copy().query('indication != "REPLICATION"')
+df = tsv_file
+df = df.drop(df[df.indication == "REPLICATION"].index)
+
 # generate profile
 profile = pandas_profiling.ProfileReport(
-    tsv_file, title='TD-Brain EDA')
+    df, title='TD-Brain EDA')
 st.title("TD-Brain EDA")
 
-st.write(model_dev_subject_id)
+st.write(df)
 st_profile_report(profile)
