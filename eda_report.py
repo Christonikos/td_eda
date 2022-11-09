@@ -21,12 +21,19 @@ st.set_page_config(page_title='TD-EDA Report',
 # # =============================================================================
 
 
-# def local_css(file_name):
-#     with open(file_name) as f:
-#         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+        hide_streamlit_style = """
+                    <style>
+                    #MainMenu {visibility: hidden;}
+                    footer {visibility: hidden;}
+                    </style>
+                    """
+        st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
-# local_css("style/style.css")
+local_css("style/style.css")
 
 
 tsv_fname = 'participants.tsv'
