@@ -14,8 +14,8 @@ import pandas_profiling
 import pandas as pd
 
 
-st.set_page_config(page_title='TD-EDA Report',
-                   page_icon=":brain:", layout='wide')
+# st.set_page_config(page_title='TD-EDA Report',
+#                    page_icon=":brain:", layout='wide')
 # # =============================================================================
 # # LOCAL CSS
 # # =============================================================================
@@ -40,7 +40,7 @@ tsv_file = pd.read_csv(tsv_fname,
                        index_col=False,
                        low_memory=False)
 
-model_dev_subject_id = tsv_file.query('indication != "REPLICATION"')
+model_dev_subject_id = tsv_file.copy().query('indication != "REPLICATION"')
 # generate profile
 profile = pandas_profiling.ProfileReport(
     model_dev_subject_id, title='TD-Brain EDA')
