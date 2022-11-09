@@ -16,17 +16,17 @@ import pandas as pd
 
 st.set_page_config(page_title='TD-EDA Report',
                    page_icon=":brain:", layout='wide')
-# =============================================================================
-# LOCAL CSS
-# =============================================================================
+# # =============================================================================
+# # LOCAL CSS
+# # =============================================================================
 
 
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+# def local_css(file_name):
+#     with open(file_name) as f:
+#         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
-local_css("style/style.css")
+# local_css("style/style.css")
 
 
 tsv_fname = 'participants.tsv'
